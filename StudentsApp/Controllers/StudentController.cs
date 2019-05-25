@@ -12,6 +12,10 @@ namespace StudentsApp.Controllers
         // GET: Student
         public ActionResult Index()
         {
+            Course math = new Course();
+            math.CourseName = "math 101";
+            math.TotalCredits = 4;
+
             Student Edu = new Student();
             Edu.FirstName = "Eduardo";
             Edu.LastName = "Fernandez";
@@ -29,7 +33,11 @@ namespace StudentsApp.Controllers
             students.Add(Yani);
             students.Add(Tia);
 
-            return View(students);
+            Course_Students obj = new Course_Students();
+            obj.course = math;
+            obj.students = students;
+
+            return View(obj);
         }
     }
 }

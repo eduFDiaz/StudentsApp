@@ -1,10 +1,13 @@
-﻿@model IEnumerable<StudentsApp.Models.Student>
+﻿@model StudentsApp.Models.Course_Students
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>This is the student controller - index view</h2>
-@foreach (var student in Model) { 
-    <h1>@student.FirstName</h1><h1>@student.LastName</h1><br />
+<h1>This is the student controller - index view</h1>
+
+<h2>@Model.course.CourseName</h2>
+
+@foreach (var student in Model.students) { 
+    <h1>Student: </h1><h2>@student.FirstName @student.LastName</h2><br />
 }
