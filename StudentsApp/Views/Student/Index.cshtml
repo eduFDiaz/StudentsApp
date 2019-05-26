@@ -1,13 +1,11 @@
-﻿@model StudentsApp.Models.Course_Students
+﻿@model StudentsApp.ViewModels.Course_Students
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h1>This is the student controller - index view</h1>
-
-<h2>@Model.course.CourseName</h2>
+<h1>Course: @Model.course.CourseName</h1>
 
 @foreach (var student in Model.students) { 
-    <h1>Student: </h1><h2>@student.FirstName @student.LastName</h2><br />
+    <h2>Student: @student.FirstName @student.LastName</h2><br />
 }
