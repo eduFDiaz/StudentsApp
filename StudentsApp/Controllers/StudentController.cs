@@ -5,40 +5,29 @@ using System.Web;
 using System.Web.Mvc;
 using StudentsApp.Models;
 using StudentsApp.ViewModels;
+using System.Data;
 
 namespace StudentsApp.Controllers
 {
     public class StudentController : Controller
     {
-        // GET: Student
+        // GET: Context for databse Students
+        private SchoolContext db = new SchoolContext();
+
         public ActionResult Index()
         {
-            Course math = new Course();
-            math.CourseName = "math 101";
-            math.TotalCredits = 4;
+            var students = db.Students.ToList();
+            return View(students);
 
-            Student Edu = new Student();
-            Edu.FirstName = "Eduardo";
-            Edu.LastName = "Fernandez";
+            //Course math = new Course();
+            //math.CourseName = "math 101";
+            //math.TotalCredits = 4;
 
-            Student Yani = new Student();
-            Yani.FirstName = "Yaniel";
-            Yani.LastName = "Fernandez";
+            //Course_Students obj = new Course_Students();
+            //obj.course = math;
+            //obj.students = students;
 
-            Student Tia = new Student();
-            Tia.FirstName = "Consuelo";
-            Tia.LastName = "Fernandez";
-
-            List <Student> students = new List<Student>();
-            students.Add(Edu);
-            students.Add(Yani);
-            students.Add(Tia);
-
-            Course_Students obj = new Course_Students();
-            obj.course = math;
-            obj.students = students;
-
-            return View(obj);
+            //return View(obj);
         }
     }
 }

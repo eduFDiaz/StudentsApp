@@ -1,11 +1,10 @@
-﻿@model StudentsApp.ViewModels.Course_Students
-
+﻿@model IEnumerable<StudentsApp.Models.Student>
 @{
     ViewBag.Title = "Index";
 }
 
-<h1>Course: @Model.course.CourseName</h1>
+@*<h1>Course: @Model.course.CourseName</h1>*@
 
-@foreach (var student in Model.students) { 
+@foreach (var student in Model) { 
     <h2>Student: @student.FirstName @student.LastName</h2><br />
 }
