@@ -14,6 +14,7 @@ namespace StudentsApp
     {
         protected void Application_Start()
         {
+            //Run the line bellow when initializing/seedding objects to database
             Database.SetInitializer<SchoolContext>(new SchoolInitializer());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
