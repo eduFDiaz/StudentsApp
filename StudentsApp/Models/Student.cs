@@ -13,6 +13,8 @@ namespace StudentsApp.Models
         public DateTime EnrollmentDate { get; set; }
         // Every student will have a collection of Enrollments
         // Specifies One to Many relation to Enrollment model
-        public ICollection<Enrollment> Enrollments { get; set; }
+        // we declare Enrollments as virtual so .net framework 
+        // will fetch the enrollments from the database
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
 }

@@ -14,7 +14,8 @@ namespace StudentsApp.Models
         public decimal? Grade { get; set; }
         // Every Enrollment has access to an Student and a Course
         // this is called navigation properties
-        public Student student { get; set; }
-        public Course  course   { get; set; }
+        // declare it virtual so .net will fetch it from the db
+        public virtual Student student { get; set; }
+        public virtual Course  course   { get; set; }
     }
 }

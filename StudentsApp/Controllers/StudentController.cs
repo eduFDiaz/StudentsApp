@@ -14,6 +14,19 @@ namespace StudentsApp.Controllers
     {
         private SchoolContext db = new SchoolContext();
 
+        // GET: Search
+        public ActionResult Search(string SearchBox)
+        {
+            // See LINQ examples for better understanding
+            var students = (from s in db.Students
+                           where 
+                                s.LastName.Contains(SearchBox)
+                                || s.FirstName.Contains(SearchBox)
+                           select s).ToList();
+
+            return View("Index", students);
+        }
+
         // GET: Student
         public ActionResult Index()
         {
