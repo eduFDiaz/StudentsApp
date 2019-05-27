@@ -12,6 +12,6 @@ namespace StudentsApp.Models
         public int TotalCredits { get; set; }
         // Every course will have a collection of Enrollments
         // Specifies One to Many relation to Enrollment model
-        public ICollection<Enrollment> Enrollments { get; set; }
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
 }
