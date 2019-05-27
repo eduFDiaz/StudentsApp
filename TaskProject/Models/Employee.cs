@@ -9,6 +9,5 @@ namespace TaskProject.Models
     {
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
-        public virtual ICollection<TaskDetail> TaskDetails { get; set; }
     }
 }

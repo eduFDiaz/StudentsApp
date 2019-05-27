@@ -1,0 +1,48 @@
+﻿@model TaskProject.Models.TaskDetail
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TaskDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TaskName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaskName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TaskDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaskDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AssignedDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.status.StatusId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.employee)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.employee.EmployeeId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TaskDetailId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
