@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<StudentsApp.Models.Student>
+@using StudentsApp.Helpers
 
 @{
     ViewBag.Title = "Index";
@@ -28,19 +29,27 @@
         <th>
             @Html.DisplayNameFor(model => model.EnrollmentDate)
         </th>
+        <th>
+            Actions
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
+            @*@Html.DisplayFor(modelItem => item.FirstName)*@
+            @*Just a demonstration of how to use your own implemented Helpers
+            see Truncated method of Helpers class in StudentsApp.Helpers*@
+            @Html.Truncate(item.LastName, 20)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LastName)
+            @*@Html.DisplayFor(modelItem => item.LastName)*@
+            @Html.Truncate(item.LastName, 20)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            @*@Html.DisplayFor(modelItem => item.EnrollmentDate)*@
+            @Html.HumanDate(item.EnrollmentDate)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.StudentId }) |
